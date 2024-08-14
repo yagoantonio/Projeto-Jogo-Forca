@@ -16,6 +16,82 @@ def limpa_tela():
     else:
         _ = system('clear')
 
+# Função que desenha a forca na tela
+def display(chances):
+
+    # Lista de estágios da forca
+    stages = [  # estágio 6 (final)
+                """
+                   --------
+                   |      |
+                   |      O
+                   |     \\|/
+                   |      |
+                   |     / \\
+                   -
+                """,
+                # estágio 5
+                """
+                   --------
+                   |      |
+                   |      O
+                   |     \\|/
+                   |      |
+                   |     / 
+                   -
+                """,
+                # estágio 4
+                """
+                   --------
+                   |      |
+                   |      O
+                   |     \\|/
+                   |      |
+                   |      
+                   -
+                """,
+                # estágio 3
+                """
+                   --------
+                   |      |
+                   |      O
+                   |     \\|
+                   |      |
+                   |     
+                   -
+                """,
+                # estágio 2
+                """
+                   --------
+                   |      |
+                   |      O
+                   |      |
+                   |      |
+                   |     
+                   -
+                """,
+                # estágio 1
+                """
+                   --------
+                   |      |
+                   |      O
+                   |    
+                   |      
+                   |     
+                   -
+                """,
+                # estágio 0
+                """
+                   --------
+                   |      |
+                   |      
+                   |    
+                   |      
+                   |     
+                   -
+                """
+    ]
+    return stages[chances]
 
 def game():
     limpa_tela()
@@ -50,6 +126,7 @@ def game():
     #Enquanto o número de tentativas não atingir o limite máximo
     while tentativas > 0:
         # Mostrar a palavra como uma série de underscores, com as letras adivinhadas preenchidas nos espaços corretos
+        print(display(tentativas))
         print(" ".join(letras_certas))
         print('\nTentativas Restantes:', tentativas)
         print('Letras erradas:', ''.join(letras_erradas))
