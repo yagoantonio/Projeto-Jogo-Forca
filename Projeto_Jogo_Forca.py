@@ -134,6 +134,11 @@ def game():
         # Pedir ao jogador que adivinhe uma letra
         letra = input("\nDigite uma Letra: ").lower()
 
+        #Verificar se a letra já foi digitada
+        if letra in letras_certas or letra in letras_erradas:
+            print('Letra já Digitada, tente novamente!')
+            continue
+
         # Verificar se a letra adivinhada está na palavra
         # Se a letra adivinhada está na palavra, adicionar a letra à lista de letras adivinhadas e atualizar a exibição da palavra
         # Se a letra adivinhada não está na palavra, reduzir o número de tentativas restantes e exibir a mensagem "Letra incorreta. Tentativas restantes: [número de tentativas restantes]"
