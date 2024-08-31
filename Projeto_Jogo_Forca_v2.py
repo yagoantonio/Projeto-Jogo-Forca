@@ -98,13 +98,13 @@ lista_palavaras = [
 # Classe
 class Forca:
 
-# Método Construtor
+# Metodo Construtor
     def __init__(self,palavra):
         self.palavra = palavra
         self.letras_certas = []
         self.letras_erradas = []
 
-# Método para adivinhar a letra
+#Metodo para adivinhar a letra
     def checar_letra(self,letra):
         if letra in self.palavra and letra not in self.letras_certas:
             self.letras_certas.append(letra)
@@ -112,18 +112,18 @@ class Forca:
             self.letras_erradas.append(letra)
         else:
             pass
-# Método para verificar se o jogo terminou
+# Metodo para verificar se o jogo terminou
     def gameOver(self):
         return self.gameWon() or (len(self.letras_erradas)==6)
 
-# Método para verificar se o jogador venceu
+# Metodo para verificar se o jogador venceu
     def gameWon(self):
         if "_" not in self.esconde_palavra():
             return True
         else:
             return False
 
-# Método para não mostrar a letra no board
+# Metodo para não mostrar a letra no board
     def esconde_palavra(self):
         rtn = ''
         for letra in self.palavra:
@@ -134,7 +134,7 @@ class Forca:
 
         return rtn
 
-# Método para checar o status do game e imprimir o board na tela
+# Metodo para checar o status do game e imprimir o board na tela
     def printStatusGame(self):
         print(board[len(self.letras_erradas)])
         print(self.esconde_palavra())
